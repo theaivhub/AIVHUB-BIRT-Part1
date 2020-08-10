@@ -1,0 +1,57 @@
+.report {
+background : #000000;
+font-family : Yu Gothic Light;
+font-size : 12px;
+font-weight : bold;
+color : #000000;
+}
+
+.reporttitle {
+	background : #cccccc;
+	color : #000000;
+	font-size : 32px;
+	font-weight : normal;
+}
+
+.reportsubtitle {
+	background : #fefefe;
+	font-size : 14px;
+	font-weight : bold;
+	color : #000000;
+}
+
+.pagetitle {
+	background : #ffffff;
+	font-size : 28px;
+	font-family : Yu Gothic;
+	font-weight : normal;
+	color : #1AC2D2;
+}
+
+.table-header {
+	background-color : #cccccc;
+	font-size : medium;
+	font-weight : bold;
+	color : #000000;
+	border-bottom-color : #666666;
+	border-bottom-style : solid;
+	border-bottom-width : 2px;
+}
+
+.table-footer {
+	background-color : #ffffff;
+	font-size : medium;
+	font-weight : bold;
+	color : #000000;
+	border-bottom-color : #666666;
+	border-bottom-style : solid;
+	border-bottom-width : 1px;
+}
+
+.table-detail {
+	background-color : #f7f7f7;
+	font-size : small;
+	color : #444444;
+	height : 30px;
+	vertical-align : middle;
+}

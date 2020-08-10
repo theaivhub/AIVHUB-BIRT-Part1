@@ -1,0 +1,70 @@
+package com.birttraining;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+
+import org.eclipse.birt.report.engine.api.script.IUpdatableDataSetRow;
+import org.eclipse.birt.report.engine.api.script.ScriptException;
+import org.eclipse.birt.report.engine.api.script.eventadapter.ScriptedDataSetEventAdapter;
+import org.eclipse.birt.report.engine.api.script.instance.IDataSetInstance;
+
+import com.ibm.icu.text.SimpleDateFormat;
+
+public class ScriptedDSEH extends ScriptedDataSetEventAdapter {
+
+Iterator<String> iterator = null;
+SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+Calendar calendar = new GregorianCalendar();
+
+public void open(IDataSetInstance argO) throws ScriptException {
+	ArrayList<String>combineData = new ArrayList<String>();
+	ArrayList<String> source= readCustomerIssues();
+	if(source !=null)
+		combineData.addAll(source);
+	
+	source = readAccountingIssues();
+	if(source !=null)
+		combineData.addAll(source);
+	iterator = combineData.iterator();
+}
+
+ private ArrayList<String> readCustomerIssues(){
+	 ArrayList<String> customerIssues = new ArrayList<String>();
+	 calendar.add(Calendar.DAY_OF_MONTH, -1);
+	 customerIssues.add("Customer Issues;658;Product is not compatible;103;"+ 
+	 simpleDateFormat.format(calendar.getTime()));
+	 calendar.add(Calendar.DAY_OF_MONTH, -1);
+	 customerIssues.add("Customer Issues;417;Order 3 pieces but received only 2;114;"+ 
+	 simpleDateFormat.format(calendar.getTime()));
+	 calendar.add(Calendar.DAY_OF_MONTH, -3);
+	 customerIssues.add("Customer Issues;104;Quality issue;203;"+ 
+	 simpleDateFormat.format(calendar.getTime()));
+	 return customerIssues;
+}
+ 
+ private ArrayList<String> readAccountingIssues(){
+	 ArrayList<String>accountingIssues= new ArrayList<String>();
+	 accountingIssues.add("Accounting Issues;1107;Invoice is overdue by 14 days;204;"+
+	 simpleDateFormat.format(calendar.getTime()));
+	 calendar.add(Calendar.DAY_OF_MONTH, -11);
+	 accountingIssues.add("Accounting Issues;1103;Unable to make payment due to bank;204;"+
+	 simpleDateFormat.format(calendar.getTime()));
+	 return accountingIssues;
+}
+
+public boolean fetch(IDataSetInstance argO, IUpdatableDataSetRow arg1)
+		throws ScriptException {
+	if(iterator.hasNext())
+	{
+		String customeData[] = iterator.next().split(";");
+		for(int i=0;i<customeData.length;i++){
+			arg1.setColumnValue(i+1,customeData[i]);
+		}
+		return true;
+	} else{
+		return false;
+		}
+	}
+}

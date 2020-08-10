@@ -1,0 +1,24 @@
+var type = this.getRowData().getColumnValue("IssueType");
+var noOfDays = BirtDateTime.diffDay(this.getRowData().getColumnValue("IssueDate"),BirtDateTime.now());
+if("Customer Issues" == type){
+	if(noOfDays>= 4)
+	{
+		this.getStyle().backgroundColor="#ff0000"
+	}else if(noOfDays == 3)
+	{
+		this.getStyle().backgroundColor="#ffff00"
+	}else{
+		this.getStyle().backgroundColor="#0000ff"
+	}
+}else {
+	if(noOfDays>= 30)
+	{
+		this.getStyle().backgroundColor="#ff0000"
+	}else if(noOfDays> 7 & noOfDays< 30)
+	{
+		this.getStyle().backgroundColor="#ffff00"
+	}else if(noOfDays>3)
+	{
+		this.getStyle().backgroundColor="#0000ff"
+	}
+	}

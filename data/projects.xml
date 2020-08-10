@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<PROJECTS>
+   <PROJECT>
+    <EmployeeNumber>1002</EmployeeNumber>
+    <StartDate>2010-10-20</StartDate>
+    <EndDate>2014-01-31</EndDate>
+    <Name>PACT Project</Name>
+   </PROJECT>
+   <PROJECT>
+    <EmployeeNumber>1056</EmployeeNumber>
+    <StartDate>2012-11-10</StartDate>
+    <EndDate>2014-01-31</EndDate>
+    <Name>PACT Project</Name>
+   </PROJECT>
+   <PROJECT>
+    <EmployeeNumber>1002</EmployeeNumber>
+    <StartDate>2012-02-01</StartDate>
+    <EndDate>2014-06-30</EndDate>
+    <Name>Greenfield</Name>
+   </PROJECT>
+   <PROJECT>
+    <EmployeeNumber>1088</EmployeeNumber>
+    <StartDate>2011-01-21</StartDate>
+    <EndDate>2013-06-30</EndDate>
+    <Name>Greenfield</Name>
+   </PROJECT>
+</PROJECTS>
