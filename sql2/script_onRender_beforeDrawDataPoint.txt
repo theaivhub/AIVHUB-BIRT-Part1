@@ -1,0 +1,5 @@
+function beforeDrawDataPoint(dph, fill, icsc)
+{
+chart = icsc.getChartInstance(); 
+fill.set(0,121,107);
+}

@@ -1,0 +1,4 @@
+function beforeGeneration(chart, icsc)
+{
+chart.getTitle().getLabel().getCaption().setValue("Political Party By Precinct");
+}

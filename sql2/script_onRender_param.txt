@@ -1,0 +1,4 @@
+if ( params["Party Bar Chart"] == false )
+this.getStyle().display = 'none';
+else
+this.getStyle().display = 'block';
